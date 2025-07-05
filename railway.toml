@@ -1,0 +1,16 @@
+[build]
+builder = "nixpacks"
+
+[deploy]
+healthcheckPath = "/"
+restartPolicyType = "always"
+
+[[services]]
+name = "web"
+
+[services.env]
+NODE_ENV = "production"
+
+[[services]]
+name = "postgres"
+template = "postgres"
