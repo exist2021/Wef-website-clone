@@ -164,12 +164,18 @@ vercel --prod
 
 ### 🔧 Issue Resolution
 **Problem**: Site showing 404 NOT_FOUND error
-**Root Cause**: Server looking for static files in wrong directory (`dist/server/public` instead of `dist/`)
+**Root Cause**: Incorrect Vercel routing configuration - trying to route to `/dist/index.html` when static files are served at root level
 **Solution**: 
-- ✅ Fixed static file path in `server/vite.ts`
+- ✅ Fixed routing in `vercel.json`: `/(.*)` → `/index.html` (not `/dist/index.html`)
+- ✅ Improved JSON formatting in `vercel.json`
 - ✅ Removed development scripts from HTML
 - ✅ Added proper metadata and title
 - 🔄 Next deployment will resolve the issue
+
+**Technical Details**: 
+- Vercel's `@vercel/static` serves files from `dist/**` at the root level
+- Our routing was incorrectly pointing to `/dist/index.html` instead of `/index.html`
+- The Express server code only runs in development, not on Vercel
 
 ## Recommendations
 
