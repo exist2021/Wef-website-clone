@@ -10,13 +10,13 @@ export default function SpotlightSection({ articles }: SpotlightSectionProps) {
 
   return (
     <section className="py-16 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
+      <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-left mb-12">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">Spotlight</h2>
           <p className="text-lg text-gray-600">
             Featured insights and analysis from our global community
           </p>
-        </div>
+        </div> {/* Changed text-center to text-left */}
         
         {!featuredArticles ? (
           <p className="text-center text-gray-600">Loading articles...</p>
@@ -25,7 +25,7 @@ export default function SpotlightSection({ articles }: SpotlightSectionProps) {
             {featuredArticles.map((article) => (
               <Card key={article.id} className="hover:shadow-lg transition-shadow">
                 {article.imageUrl && (
-                  <div className="aspect-video w-full overflow-hidden rounded-t-lg">
+                  <div className="aspect-video w-full overflow-hidden"> {/* Removed rounded-t-lg */}
                     <img 
                       src={article.imageUrl} 
                       alt={article.title}
@@ -35,16 +35,16 @@ export default function SpotlightSection({ articles }: SpotlightSectionProps) {
                 )}
                 <CardHeader>
                   <div className="flex items-center gap-2 mb-2">
-                    <span className="text-xs px-2 py-1 bg-blue-100 text-blue-600 rounded-full">
+                    <span className="text-xs px-2 py-1 bg-gray-200 text-gray-700"> {/* Adjusted category style */}
                       {article.category}
                     </span>
                     {article.contentType === 'video' && (
-                      <span className="text-xs px-2 py-1 bg-green-100 text-green-600 rounded-full">
+                      <span className="text-xs px-2 py-1 bg-red-600 text-white"> {/* Adjusted video tag style */}
                         Video
                       </span>
                     )}
                   </div>
-                  <CardTitle className="text-lg leading-tight">{article.title}</CardTitle>
+                  <CardTitle className="text-xl font-semibold leading-tight">{article.title}</CardTitle> {/* Adjusted title style */}
                   {article.description && (
                     <CardDescription>{article.description}</CardDescription>
                   )}

@@ -8,11 +8,11 @@ interface PressSectionProps {
 export default function PressSection({ pressReleases }: PressSectionProps) {
   return (
     <section className="py-16 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">In the Press</h2>
-          <p className="text-lg text-gray-600">
-            What the media is saying about the World Economic Forum
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-10">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">In the Press</h2>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            Latest news and coverage from global media outlets.
           </p>
         </div>
         
@@ -20,22 +20,22 @@ export default function PressSection({ pressReleases }: PressSectionProps) {
           <p className="text-center text-gray-600">Loading press coverage...</p>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {pressReleases.slice(0, 3).map((press) => (
-              <Card key={press.id} className="hover:shadow-lg transition-shadow">
-                <CardHeader>
+            {pressReleases.slice(0, 6).map((press) => (
+              <Card key={press.id} className="border-t-4 border-blue-600 rounded-b shadow-md">
+                <CardHeader className="pb-4">
                   <div className="flex items-center gap-2 mb-2">
-                    <span className="text-xs px-2 py-1 bg-orange-100 text-orange-600 rounded-full">
+                    <span className="text-xs font-semibold text-blue-600 uppercase">
                       {press.source}
                     </span>
                   </div>
-                  <CardTitle className="text-lg leading-tight">{press.title}</CardTitle>
+                  <CardTitle className="text-lg font-semibold text-gray-800 leading-tight">{press.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <a 
                     href={press.url || '#'} 
-                    className="text-blue-600 hover:text-blue-800 text-sm font-medium"
+                    className="text-blue-600 hover:underline text-sm font-medium"
                   >
-                    Read more →
+                    Read Full Article →
                   </a>
                 </CardContent>
               </Card>
