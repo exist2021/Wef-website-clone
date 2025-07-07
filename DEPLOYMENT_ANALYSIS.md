@@ -5,15 +5,24 @@
 ### Latest Deployment Summary
 - **Repository**: github.com/exist2021/Wef-website-clone 
 - **Branch**: cursor/run-build-and-deployment-process-cec0 (Feature Branch)
-- **Latest Commit**: 8ff2eae (Previous main: 5ff8d64)
-- **Build Time**: 48ms (Fastest yet! Previous: 50ms)
-- **Clone Time**: 1.035s (Slower due to branch differences)
+- **Latest Commit**: e663c8e (Previous: 8ff2eae)
+- **Build Time**: 48ms (Consistently excellent)
+- **Clone Time**: 295ms (Much improved from 1.035s)
 - **Deployment Location**: Washington, D.C., USA (East) – iad1
 - **Build Machine**: 2 cores, 8 GB RAM
 - **Status**: Deployment completed successfully ✅
+- **🌐 Live Site**: https://wef-website-clone-1twpiffbt-exist2021s-projects.vercel.app/
+
+### What's Happening? 🤔
+You're seeing **automatic deployments** triggered by:
+
+1. **Git Commits**: Every push to your repository triggers a new deployment
+2. **Feature Branch**: You're working on branch `cursor/run-build-and-deployment-process-cec0`
+3. **Vercel Integration**: Your repo is connected to Vercel for continuous deployment
+4. **Preview Deployments**: Each commit gets its own preview URL
 
 ### Branch Analysis 🔀
-This deployment is from a **feature branch** (`cursor/run-build-and-deployment-process-cec0`), suggesting active development or testing of new features. The branch name indicates work on build and deployment processes.
+The feature branch (`cursor/run-build-and-deployment-process-cec0`) suggests work on build and deployment processes. Each commit to this branch automatically triggers a new deployment, which is why you're seeing multiple deployment logs.
 
 ### Deployment History
 | Timestamp | Branch | Commit | Build Time | Clone Time | Status |
@@ -118,6 +127,40 @@ The build times across deployments demonstrate excellent optimization:
 - ✅ **Optimized Bundle**: Consistent performance across branches
 - ✅ **Branch Support**: Feature branches deploy as reliably as main
 - ✅ **Quick Deployments**: Total deployment under 60 seconds
+
+## Understanding Your Deployments 🔍
+
+### Why Multiple Deployments?
+You're seeing multiple deployment logs because:
+
+1. **Continuous Integration**: Your GitHub repo is connected to Vercel
+2. **Auto-Deploy**: Every commit triggers a new deployment automatically
+3. **Feature Branch**: Working on `cursor/run-build-and-deployment-process-cec0`
+4. **Development Activity**: Each code change = new deployment
+
+### How to Control Deployments
+If you want to reduce automatic deployments:
+
+**Option 1: Use Vercel CLI** 
+```bash
+# Deploy manually when ready
+vercel --prod
+```
+
+**Option 2: Configure Git Integration**
+- Go to Vercel Dashboard → Project Settings → Git
+- Configure which branches trigger deployments
+- Disable auto-deploy for feature branches if needed
+
+**Option 3: Use `.vercelignore`**
+- Add files/patterns to skip deployment triggers
+- Control what changes actually trigger rebuilds
+
+### Current Site Status 🌐
+- **Live URL**: https://wef-website-clone-1twpiffbt-exist2021s-projects.vercel.app/
+- **Latest Version**: Commit e663c8e
+- **Performance**: 48ms builds (excellent)
+- **Status**: Fully functional
 
 ## Recommendations
 
