@@ -164,18 +164,20 @@ vercel --prod
 
 ### 🔧 Issue Resolution
 **Problem**: Site showing 404 NOT_FOUND error
-**Root Cause**: Incorrect Vercel routing configuration - trying to route to `/dist/index.html` when static files are served at root level
+**Root Cause**: Using legacy `builds` configuration instead of modern Vercel setup
 **Solution**: 
-- ✅ Fixed routing in `vercel.json`: `/(.*)` → `/index.html` (not `/dist/index.html`)
-- ✅ Improved JSON formatting in `vercel.json`
-- ✅ Removed development scripts from HTML
-- ✅ Added proper metadata and title
+- ✅ **Modernized Configuration**: Replaced legacy `builds` with `outputDirectory: "dist"`
+- ✅ **Fixed Static File Serving**: Vercel now properly serves static files from `dist/` at root level
+- ✅ **Corrected API Routing**: Updated API routes to point to `/server/index.js` (relative to output directory)
+- ✅ **Removed development scripts** from HTML
+- ✅ **Added proper metadata and title**
 - 🔄 Next deployment will resolve the issue
 
 **Technical Details**: 
-- Vercel's `@vercel/static` serves files from `dist/**` at the root level
-- Our routing was incorrectly pointing to `/dist/index.html` instead of `/index.html`
-- The Express server code only runs in development, not on Vercel
+- **Before**: Legacy `builds` with `@vercel/static` caused routing conflicts
+- **After**: Modern `outputDirectory` approach - Vercel automatically serves static files from `dist/` at root
+- **API Routes**: Now correctly route to `dist/server/index.js` via `/server/index.js`
+- **Static Files**: `dist/index.html` → served at `/index.html`, `dist/assets/*` → served at `/assets/*`
 
 ## Recommendations
 
