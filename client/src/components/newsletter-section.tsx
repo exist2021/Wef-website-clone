@@ -22,7 +22,8 @@ export default function NewsletterSection() {
                 Subscribe
               </Button>
             </div>{/* Remove the misplaced closing tags and fix the div nesting */}
-      </div>
+        </div>
+      </div> {/* This closes the div with class "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" */}
     </section>
   );
 }
