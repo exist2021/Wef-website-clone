@@ -21,9 +21,7 @@ export default function NewsletterSection() {
               <Button size="lg" className="bg-blue-500 hover:bg-blue-600 text-white">
                 Subscribe
               </Button>
-            </div>
-          </CardContent>
-        </Card>
+            </div>{/* Remove the misplaced closing tags and fix the div nesting */}
       </div>
     </section>
   );
